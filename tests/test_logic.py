@@ -1,8 +1,7 @@
 import pytest
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
-from app import ModelConfig
-from app import logic
+from app import ModelConfig, logic
 
 @pytest.fixture
 def model_config():
@@ -31,4 +30,20 @@ def test_predict_demand(model_config):
     )
 
     assert type(pred_demand) == float
+    assert pred_demand >= 0
+
+def test_predict_profit(model_config):
+    model, _, _ = logic.load_model(model_config)
+
+    pred_profit, pred_demand = logic.predict_profit(
+        model=model,
+        price=23.99,
+        category_id=0,
+        source_id=1,
+        cost=3.99,
+        day_of_week=2
+    )
+
+    assert type(pred_profit) == type(pred_demand) == float
+    assert pred_profit >= 0
     assert pred_demand >= 0

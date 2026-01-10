@@ -1,1 +1,2 @@
-from app.logic import ModelConfig
+from .logic import ModelConfig
+from .main import OptimizationRequest

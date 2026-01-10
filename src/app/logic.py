@@ -30,3 +30,7 @@ def predict_demand(model: xgb.XGBRegressor, price: float, category_id: int, sour
     pred = model.predict(input_data)[0]
     return max(0.0, float(pred)) # Ko nên có demand âm
 
+def predict_profit(model: xgb.XGBRegressor, price: float, category_id: int, source_id: int, cost: float, day_of_week: int):
+    demand = predict_demand(model, price, category_id, source_id, day_of_week)
+    total_profit = (price - cost) * demand
+    return total_profit, demand
