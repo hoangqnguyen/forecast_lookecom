@@ -1,0 +1,1 @@
+from app.logic import ModelConfig
