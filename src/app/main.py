@@ -3,6 +3,7 @@ from scipy.optimize import minimize
 from pydantic import BaseModel
 from app import logic, ModelConfig
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import logging
 
@@ -97,3 +98,12 @@ def optimize_price(request: OptimizationRequest):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# Thêm middleware để frontend và backend nói chuyện với nhau
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Trong thực tế nên để domain cụ thể, demo để * cho tiện
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
