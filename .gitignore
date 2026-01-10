@@ -464,3 +464,8 @@ __pycache__/
 # OpenCover UI analysis results
 OpenCover/
 junit/
+
+
+# Custom
+data/*
+*:memory
