@@ -469,3 +469,4 @@ junit/
 # Custom
 data/*
 *:memory
+*.pkl
