@@ -32,7 +32,6 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         setResult(data);
-        console.log(data);
       } else {
         alert("Lỗi backend: " + response.statusText);
       }
@@ -77,7 +76,7 @@ function App() {
               </div>
             </div>
           ) : (
-            <div>Đợi tí</div>
+            <div>Hãy nhập liệu và click nút Tối ưu nhé!</div>
           )}
         </div>
       </div>
