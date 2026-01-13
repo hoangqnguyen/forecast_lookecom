@@ -40,7 +40,7 @@ class OptimizationRequest(BaseModel):
     day_of_week: int # Ngày bán trong tuần 
     current_cost: float # Chi phí sx 1 sản phẩm
     min_margin: float = 1.1 # Lợi nhuận biên tối thiểu ~ 10% chi phí 
-    max_margin: float = 4.0 # Lợi nhuận biên tối đa ~ 3x chi phí 
+    max_margin: float = 5.0 # Lợi nhuận biên tối đa ~ 3x chi phí 
 
 class OptimizationReponse(BaseModel):
     status: str

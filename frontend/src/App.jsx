@@ -83,7 +83,7 @@ const displayResult = (loading, result) => {
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
               <p className="text-xs font-bold text-slate-400 uppercase">Doanh số dự báo</p>
-              <p className="text-xl font-bold text-slate-700 mt-1">{result.predicted_sales.toFixed(2)}</p>
+              <p className="text-xl font-bold text-slate-700 mt-1">{result.predicted_sales.toFixed(0)}</p>
             </div>
             <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
               <p className="text-xs font-bold text-blue-400 uppercase">Lợi nhuận dự kiến</p>
